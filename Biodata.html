@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRATIKUM PDW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="ucp1.css">
+    
+    <style>
+
+body{
+    background-image: url(pixiv2.jpg);
+    background-size: cover; /* Atur ukuran gambar untuk mengisi area dengan benar */
+    background-repeat: no-repeat; /* Atur agar gambar tidak diulang */
+}
+ h1 {
+    font-size: 40px;
+    padding-top: 100px;
+    text-align: center;
+    color: #dadada;
+    
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+ }
+
+p{
+    margin-bottom: 33px;
+    margin-bottom: 33px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px #7b5c56;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.img-circle {
+    border: 2px solid #000; /* Warna dan ketebalan border bisa disesuaikan */
+    border-radius: 50%; /* Untuk menjaga bentuk lingkaran */
+    box-sizing: border-box; /* Agar border tidak mempengaruhi ukuran total gambar */
+}
+    </style>
+</head>
+<body>    
+    <header class="navbar">
+        <a class="teks-nav" href="index.html">PRATIKUM</a>
+        <a href="index.html" id="nav-work" class="nav-link active">
+            HOME
+        </a>
+        <div class="dropdown">
+            <a href="#" id="nav-work" class="nav-link">
+                PROFIL <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="Biodata.html">BIODATA</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" id="nav-work" class="nav-link">
+                HOBBY <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="Musik.html">MUSIK</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" id="nav-work" class="nav-link">
+                KESUKAAN <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="makanan.html">MAKANAN</a>
+                <a href="waktu makan.html">WAKTU MAKAN</a>
+            </div>
+        </div>
+    </header> 
+
+    <h1>BIODATA PEMAIN VALORANT</h1>
+    
+    <div class="circle-container">
+        <div class="col-sm-4">
+            <p class="text-center"><strong>Agil imam alhafizi</strong></p><br>
+            <a href="#foto1" data-toggle="collapse">
+              <img src="foto1.jpg" class="img-circle person" alt="Random Name" width="200" height="200">
+            </a>
+            <div id="foto1" class="collapse">
+              <p>Touch me</p>
+              <p>DUELIST 'JET'</p>
+              <p>STUCK SILVER RANK</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>Muhammad sakti ramadhan</strong></p><br>
+            <a href="#foto2" data-toggle="collapse">
+              <img src="foto2.jpg" class="img-circle person" alt="Random Name" width="200" height="200">
+            </a>
+            <div id="foto1" class="collapse">
+              <p>Falex</p>
+              <p>SMOKER 'OMEN','BRIM</p>
+              <p>PENGGENDONG HANDAL</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>PEPSODENT BATANG</strong></p><br>
+            <a href="#foto1" data-toggle="collapse">
+              <img src="foto3.jpg" class="img-circle person" alt="Random Name" width="200" height="200">
+            </a>
+            <div id="foto1" class="collapse">
+              <p>PARDUIII</p>
+              <p>SENTINEL 'KILJOY','CHYPER'</p>
+              <p>HEADSHOT HOKI</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>OBAT NYAMUK</strong></p><br>
+            <a href="#foto4" data-toggle="collapse">
+              <img src="foto4.jpg" class="img-circle person" alt="Random Name" width="200" height="200">
+            </a>
+            <div id="foto1" class="collapse">
+              <p>ARISE NECRO</p>
+              <p>INITIATOR 'FADE','GEKKO'</p>
+              <p>BEBAN TIM</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <p1>Pengembangan Desain Web - 2024 - kelas B</p1>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/agilimam_/"><i class="fab fa-instagram"></i></a>
+                <a href="https://discord.com/"><i class="fab fa-discord"></i></a>
+                <a href="https://www.youtube.com/@Sunlight_20"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function () {
+            var circles = document.getElementsByClassName('circle');
+
+            for (var i = 0; i < circles.length; i++) {
+                circles[i].addEventListener('click', function () {
+                    this.classList.add('animate');
+                    var circle = this;
+                    setTimeout(function () {
+                        circle.classList.remove('animate');
+                    }, 1000);
+                });
+            }
+        };
+    </script>
+</body>
+</html>

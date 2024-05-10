@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRATIKUM PDW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="ucp1.css">
+</head>
+<style>
+    body{
+    background-image: url(pixiv2.jpg);
+    background-size: cover; /* Atur ukuran gambar untuk mengisi area dengan benar */
+    background-repeat: no-repeat; /* Atur agar gambar tidak diulang */
+    color:aqua
+}
+</style>
+<body>    
+    <header class="navbar">
+        <a class="teks-nav" href="index.html">PRATIKUM</a>
+        <a href="index.html" id="nav-work" class="nav-link active">
+            HOME
+        </a>
+        <div class="dropdown">
+            <a href="#" id="nav-work" class="nav-link">
+                PROFIL <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="Biodata.html">BIODATA</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" id="nav-work" class="nav-link">
+                HOBBY <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="Musik.html">MUSIK</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" id="nav-work" class="nav-link">
+                KESUKAAN <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="makanan.html">MAKANAN</a>
+                <a href="waktu makan.html">WAKTU MAKAN</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="container">
+            <div class="text">
+                <p class="greetings" id="greetings"></p>
+                <p id="current-time"></p>
+                <div class="carousel-container">
+                    <buttonC class="prev" onclick="prevSlide()">&#10094;</buttonC>
+                    <div class="carousel">
+                        <div class="card"><br>
+                            <img src="https://cdn.idntimes.com/content-images/community/2023/02/27e7a404d84f475fb2948b683341463e-332729655-988095775962641-1964103044030272768-n-b9c7fac7543a061202919ad3b742ab1f-36d7bb693c6ad4ca210f06f73e68c512.jpg" alt="Image 1" width="500" height="500">
+                        </div> 
+                    </div>
+                    <buttonC class="next" onclick="nextSlide()">&#10095;</buttonC>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <p>Pengembangan Desain Web - 2024 - kelas B</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/agilimam_/"><i class="fab fa-instagram"></i></a>
+                <a href="https://discord.com/"><i class="fab fa-discord"></i></a>
+                <a href="https://www.youtube.com/@Sunlight_20"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for real-time greetings and current time
+        function updateGreetings() {
+            var today = new Date();
+            var currentHour = today.getHours();
+            var greetingsElement = document.getElementById('greetings');
+            var currentTimeElement = document.getElementById('current-time');
+            var greetings = '';
+
+            if (currentHour < 12) {
+                greetings = 'makan pagi ☀️';
+            } else if (currentHour < 18) {
+                greetings = 'makan siang!🌤️';
+            } else if (currentHour < 20) {
+                greetings = 'makan sore!🌥️';
+            } else {
+                greetings = 'makan malam!🌑';
+            }
+
+            greetingsElement.innerText = greetings;
+            currentTimeElement.innerText = 'Waktu Sekarang: ' + today.toLocaleTimeString();
+        }
+
+        updateGreetings();
+        setInterval(updateGreetings, 1000);
+
+        // JavaScript for carousel
+        var slideIndex = 0;
+
+        function showSlide() {
+            var slides = document.querySelectorAll('.card');
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+    </script>
+</body>
+</html>
